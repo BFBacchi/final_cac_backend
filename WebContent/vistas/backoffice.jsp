@@ -3,6 +3,8 @@
 
 <%@page import="misClases.Ticket"%>
 <%@page import="misClases.TicketDAO"%>
+<%@page import="misClases.Orador"%>
+<%@page import="misClases.OradorDAO"%>
 <%@page import="java.util.List"%>
 
 
@@ -89,11 +91,45 @@
 					
 						
 				</table>	
-				<a class="btn btn-success col-2 m-2" href="FrontController?accion=volver">Volver</a> 	
+				<!-- <a class="btn btn-success col-2 m-2" href="FrontController?accion=volver">Volver</a> --> 	
 		</div>
 </div>
 
+<div class="container">
+    <h2 class="text-info">Listado de Oradores Inscriptos</h2>
+    <div class="row">
+        <table>
+            <thead>
+                <th>Id Orador</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Temática</th>
+                <th>Eliminar</th>
+            </thead>
+            <tbody> <!-- Mueve la etiqueta tbody aquí -->
+                <%
+                    List<Orador> result = null;
+                    OradorDAO orador = new OradorDAO();
+                    result = orador.listarOrador();
 
+                    for (int x = 0; x < result.size(); x++) {
+                        String rutaO = "FrontController?accion=eliminarOrador&id=" + result.get(x).getId();
+                %>
+                <tr>
+                    <td><%=result.get(x).getId()%></td>
+                    <td><%=result.get(x).getNombre()%></td>
+                    <td><%=result.get(x).getApellido()%></td>
+                    <td><%=result.get(x).getTematica()%></td>
+                    <td class="text-center"><a href=<%=rutaO%>> <i class="fa-solid fa-trash-can"></i></a> </td>
+                </tr>
+                <%
+                    }
+                %>
+            </tbody>
+        </table>
+        <a class="btn btn-success col-2 m-2" href="FrontController?accion=volver">Volver</a>
+    </div>
+</div>
 
 </body>
 </html>

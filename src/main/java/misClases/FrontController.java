@@ -25,9 +25,11 @@ public class FrontController extends HttpServlet {
 	{
 		String accion=null;
 		TicketDAO ticketDAO=null;
+		OradorDAO oradorDAO=null;
 		try
 		{
 			ticketDAO=new TicketDAO();
+			oradorDAO=new OradorDAO();
 		}
 		catch(ClassNotFoundException e)
 		{
@@ -75,7 +77,24 @@ public class FrontController extends HttpServlet {
 			
 			
 		}
-		
+		else if(accion.equals("eliminarOrador"))
+		{
+			int id=Integer.parseInt(request.getParameter("id"));
+			oradorDAO.eliminarOrador(id);
+			//dispatcher=request.getRequestDispatcher("vistas/backoffice.jsp");
+		}
+		else if(accion.equals("insertarOrador"))
+		{    
+			String nombre=request.getParameter("nombre");
+			String apellido=request.getParameter("apellido");
+			String text=request.getParameter("tematica");			
+		   
+		    Orador orador = new Orador(0,nombre, apellido, text);
+            oradorDAO.insertarOrador(orador);
+            dispatcher = request.getRequestDispatcher("vistas/backoffice.jsp");
+			
+			
+		}
 		
 		dispatcher.forward(request, response);
 		

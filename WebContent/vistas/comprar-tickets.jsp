@@ -295,7 +295,7 @@ footer {
         </div>
       </form>
     </section>
-    <footer>
+    <footer class="position-relative bottom-0">
       <div class="footer-lista justify-content-center align-items-center">
         <a class="nav-link footer-link text-center" href="#"
           >Preguntas<br />Frecuentes</a

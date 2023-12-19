@@ -278,9 +278,10 @@ footer {
                 </select>
             </div>
             <div class="col-12 mt-3">
-    			<h6>Total a pagar: $<span id="total" name="total" class="form-control total-pagar"></span></h6>
+    			<h6>Total a pagar: $<span id="total" class="form-control total-pagar"></span></h6>
+    			
 			</div>
-
+			<input type="hidden" name="total" id="totalInput">
             <div class="col-6 mt-3">
               <button type="button" class="btn btn-success" onclick="borrar();">Borrar</button>
             </div>
@@ -288,13 +289,13 @@ footer {
                 <button type="reset" class="btn btn-success" onclick="resumen();">Resumen</button>
              </div>
              <div class="col-12 mt-3">
-                <button type="submit" class="btn btn-success">Comprar</button>
+                <button type="submit" class="btn btn-success" id="linkSubmit">Comprar</button>
              </div> 
           </div>
         </div>
       </form>
     </section>
-    <footer>
+    <footer class="position-relative bottom-0">
       <div class="footer-lista justify-content-center align-items-center">
         <a class="nav-link footer-link text-center" href="#"
           >Preguntas<br />Frecuentes</a
@@ -316,11 +317,12 @@ footer {
       crossorigin="anonymous"
     ></script>
 <script>
+
+
 var select = document.getElementById("miSelect");
 
 const valorTicket = 200;
 var valorTotal;
-console.log(cantidad);
 
 function cambiarOpcionSelect(valor) {
   // Cambia la opción seleccionada al valor deseado
@@ -335,35 +337,55 @@ function resumen() {
   event.preventDefault();
   var cantidadInput = document.getElementById("input-cantidad");
   var cantidad = cantidadInput.value;
+  
+
+  // Ensure cantidad is not null or empty
+  if (cantidad == null || cantidad.trim() === "") {
+    alert("Please enter a valid quantity.");
+    return;
+  }
+
   var opcion = select.value;
   var descuento;
+
   switch (opcion) {
     case "1":
       descuento = 0.2;
-
       break;
     case "2":
       descuento = 0.5;
-
       break;
     case "3":
       descuento = 0.85;
-
       break;
     case "4":
       descuento = 1;
-
       break;
+    default:
+      descuento = 1; // Default to no discount
   }
-  valorTotal = valorTicket * descuento * cantidad;
 
-  document.getElementById("total").innerHTML =  valorTotal;
+  valorTotal = valorTicket * descuento * cantidad;
+  
+
+  // Update the total only if valorTotal is a valid number
+  if (!isNaN(valorTotal)) {
+    document.getElementById("total").innerHTML = "$" + valorTotal.toFixed(2);
+    document.getElementById("totalInput").value = valorTotal.toFixed(2);
+  } else {
+    alert("Error calculating total. Please check your inputs.");
+  }
 }
+
 function borrar() {
+  // Assuming form is the reference to your form element
+  var form = document.querySelector(".formulario");
+  document.getElementById("total").innerHTML = "";
   form.reset();
 }
 
 </script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
