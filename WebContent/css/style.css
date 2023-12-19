@@ -1,0 +1,204 @@
+.navi{
+    background-color: #353a40;
+}
+.card-superpuesta img{
+    filter: brightness(30%);
+}
+
+.card-img-overlay {
+    padding-right: 8.5rem !important;
+    padding-top: 20% !important;
+    padding-left: 48% !important;
+    height: max-content;
+}
+.card-title1, .card-text1, .btn-outline {
+    color: white;
+}
+
+.card-text1 {
+    font-size: 1rem;
+    padding-top: 1.5rem;
+    text-align: justify;
+}
+
+.card-title1 {
+    font-size: 2rem;
+}
+
+.btn-success{
+    background: rgb(14, 151, 14) !important;
+}
+
+.btn-success:hover{
+    border: none;
+    background: rgb(9, 72, 9) !important;
+}
+.link-verde{
+    color: lawngreen !important;
+}
+.link-verde:hover{
+    transform: scale(1.1);
+    transition: 8ms;
+}
+
+@media screen and (max-width: 910px){
+    .card-superpuesta img{
+        filter: brightness(100%);
+    }
+
+    .card-img-overlay{
+        padding: 2rem !important;
+        position: static !important;
+        background-color: black;
+
+    }
+}
+.honolulu-text{
+    font-size: 14px;
+    color: white;
+}
+
+.honolulu-text .btn {
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+} 
+.convocatoria-oradores{
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.div-orador{
+    font-size: 14px;
+}
+
+.text-convocatoria{
+    font-size: 13px;
+}
+
+.formulario{
+    padding-top: 5px;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.texto-area{
+    font-size: 12px;
+}
+
+.formulario button {
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    background-color: #7fc33b !important;
+    color: whitesmoke;
+}
+@media screen and (max-width: 910px){
+    .formulario{
+        padding-top: 5px;
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+footer {
+    padding-top: 15px;
+}
+
+.footer-lista{
+    background-image: linear-gradient(to right, #1a4169,
+    #0a4674, #064e74, #1a5c8a, #085fab); 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 6rem;
+}
+
+.footer-link{
+    color: white !important;
+    font-size: 14px !important;
+    padding: 1.5rem 2.5rem !important;
+}
+@media screen and (max-width: 910px){
+    .footer-lista{
+        padding: 0 2rem;
+    }
+
+    .footer-link{
+        padding: 1.5rem 1.5rem !important;
+    }
+}
+.titulo-oradores {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+.titulo-oradores div{
+    font-size: 14px;
+    
+}
+.container-oradores {
+    margin-top: 20px;
+    padding: 1rem 10rem;
+}
+#card-oradores{
+    border: 10px 10px black;
+}
+
+.card:hover{
+    transform: scale(1.01);
+    background-color: rgb(221, 218, 218);
+    cursor: pointer;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 910px) {
+    .card-text1 {
+        font-size: 1rem;
+        padding-top: 0.7rem;
+    }
+    
+    .card-title1 {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 767px){
+    .card-text {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 700px) {
+
+    .container-oradores {
+        margin-top: 20px;
+        padding: 1rem 2rem;
+    }
+    #card-oradores{
+        margin-top: 1rem !important;
+    }
+    
+}
+#total{
+    padding: .75em;
+    background-color:rgb(187, 126, 69);
+}
+
+.tickets{
+    margin-top: 8rem;
+}
+
+.row-group{
+    align-items: center;
+    padding: 0 10%;
+    justify-content: center !important;
+}
+
+.card-ticket{
+    text-align: center !important;
+    padding: 1rem;
+}
+
+.card-ticket-estudiante{
+    border: solid 1px rgb(60, 132, 226) !important ;
+}
