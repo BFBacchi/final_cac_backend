@@ -291,7 +291,7 @@ footer {
               oradores primer nivel que tenemos para ti. Te esperamos!
             </p>
             <div>
-              <button type="button" class="btn btn-outline-light">
+              <button type="button" class="btn btn-outline-light" onclick="location.href='#oradores'">
                 Quiero ser orador
               </button>
               <button
@@ -442,6 +442,7 @@ footer {
           </div>
         </div>
       </div>
+      <section id="oradores">
       <div class="convocatoria-oradores" id="form-orador">
         <div class="div-orador">CONVIÉRTETE EN ORADOR</div>
         <h4>ORADOR</h4>
@@ -451,7 +452,7 @@ footer {
           hablar!
         </div>
       </div>
-      <form action="" class="formulario">
+      <form action="FrontController?accion=insertarOrador" method="post" class="formulario">
         <div>
           <div class="row">
             <div class="col">
@@ -459,6 +460,7 @@ footer {
                 type="text"
                 class="form-control"
                 placeholder="Nombre"
+                name="nombre"
                 aria-label="Nombre"
                 required
               />
@@ -468,6 +470,7 @@ footer {
                 type="text"
                 class="form-control"
                 placeholder="Apellido"
+                name="apellido"
                 aria-label="Apellido"
                 required
               />
@@ -477,6 +480,7 @@ footer {
                 class="form-control"
                 id="Textarea1"
                 placeholder="Sobre qué quieres hablar?"
+                name="tematica"
                 rows="3"
               ></textarea>
               <label for="textarea" class="texto-area" required

@@ -36,7 +36,7 @@ public class FrontController extends HttpServlet {
 			System.out.println(e);
 		}
 		
-		RequestDispatcher dispatcher=null;
+		RequestDispatcher dispatcher = request.getRequestDispatcher("vistas/backoffice.jsp");
 		accion=request.getParameter("accion");
 		
 		
@@ -56,7 +56,7 @@ public class FrontController extends HttpServlet {
 		{
 			int id=Integer.parseInt(request.getParameter("id"));
 			ticketDAO.eliminar(id);
-			//dispatcher=request.getRequestDispatcher("vistas/backoffice.jsp");
+			//dispatcher=request.getRequestDispatcher("vistas/conferencia.jsp");
 		}
 		else if(accion.equals("volver"))
 		{
@@ -81,7 +81,7 @@ public class FrontController extends HttpServlet {
 		{
 			int id=Integer.parseInt(request.getParameter("id"));
 			oradorDAO.eliminarOrador(id);
-			//dispatcher=request.getRequestDispatcher("vistas/backoffice.jsp");
+			//dispatcher=request.getRequestDispatcher("vistas/conferencia.jsp");
 		}
 		else if(accion.equals("insertarOrador"))
 		{    
@@ -91,7 +91,7 @@ public class FrontController extends HttpServlet {
 		   
 		    Orador orador = new Orador(0,nombre, apellido, text);
             oradorDAO.insertarOrador(orador);
-            dispatcher = request.getRequestDispatcher("vistas/backoffice.jsp");
+            dispatcher = request.getRequestDispatcher("vistas/conferencia.jsp");
 			
 			
 		}
